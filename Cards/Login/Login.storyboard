@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qom-PD-Mi4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Volte-Light.ttf">
+            <string>Volte-Light</string>
+        </array>
+        <array key="Volte-Medium.ttf">
+            <string>Volte-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="fHP-LU-ezO">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="Qom-PD-Mi4" customClass="LoginViewController" customModule="Cards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lXN-K8-vZx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="Suu-HX-oEU">
+                                <rect key="frame" x="82" y="223" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="ihi-px-Ovv"/>
+                                    <constraint firstAttribute="height" constant="250" id="wmV-bl-dnR"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7jS-28-ShV">
+                                <rect key="frame" x="107" y="607" width="200" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8k-6e-vEF">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="nbK-nu-l1C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Volte-Medium" family="Volte" pointSize="14"/>
+                                        <state key="normal" title="REGISTER">
+                                            <color key="titleColor" red="0.90196078431372551" green="0.76078431372549016" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1B-bv-oFn" customClass="TKTransitionSubmitButton" customModule="TKSubmitTransition">
+                                        <rect key="frame" x="0.0" y="80" width="200" height="50"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.76078431372549016" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Volte-Medium" family="Volte" pointSize="14"/>
+                                        <state key="normal" title="LOGIN">
+                                            <color key="titleColor" red="0.074509803920000006" green="0.074509803920000006" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="normalCornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginAction:" destination="Qom-PD-Mi4" eventType="touchUpInside" id="R5W-v7-CaD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8V0-6g-hb6"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your very own card Keeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpf-Um-z6M">
+                                <rect key="frame" x="133" y="421" width="148.5" height="12"/>
+                                <fontDescription key="fontDescription" name="Volte-Light" family="Volte" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="s7a-Kk-Zz9">
+                                <rect key="frame" x="112" y="807" width="190" height="25"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U45-kM-T7l">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="qDs-sL-65u"/>
+                                            <constraint firstAttribute="width" constant="25" id="tsU-Q7-XEV"/>
+                                        </constraints>
+                                        <state key="normal" image="fb"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                                <color key="value" red="0.074509803920000006" green="0.074509803920000006" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginFb:" destination="Qom-PD-Mi4" eventType="touchUpInside" id="CFC-1M-XZx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxb-7E-Eow">
+                                        <rect key="frame" x="55" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="google"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiS-cb-Mfp">
+                                        <rect key="frame" x="110" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="jWP-FT-dSf"/>
+                                            <constraint firstAttribute="width" constant="25" id="q8Y-Sm-oOY"/>
+                                        </constraints>
+                                        <state key="normal" image="twiter"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEO-TY-zu4">
+                                        <rect key="frame" x="165" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="insta"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.074509803921568626" green="0.074509803921568626" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="7jS-28-ShV" firstAttribute="centerX" secondItem="Suu-HX-oEU" secondAttribute="centerX" id="2bu-e4-jSg"/>
+                            <constraint firstItem="s7a-Kk-Zz9" firstAttribute="centerX" secondItem="V3o-8Y-kvM" secondAttribute="centerX" id="2zB-va-dne"/>
+                            <constraint firstItem="Fpf-Um-z6M" firstAttribute="bottom" secondItem="Suu-HX-oEU" secondAttribute="bottom" constant="-40" id="aXO-IQ-xf1"/>
+                            <constraint firstItem="Suu-HX-oEU" firstAttribute="centerY" secondItem="lXN-K8-vZx" secondAttribute="centerY" constant="-100" id="nHD-VS-4Yd"/>
+                            <constraint firstItem="Suu-HX-oEU" firstAttribute="centerX" secondItem="lXN-K8-vZx" secondAttribute="centerX" id="nSr-O4-CiN"/>
+                            <constraint firstItem="V3o-8Y-kvM" firstAttribute="bottom" secondItem="s7a-Kk-Zz9" secondAttribute="bottom" constant="30" id="qq8-TT-EhU"/>
+                            <constraint firstItem="s7a-Kk-Zz9" firstAttribute="top" secondItem="7jS-28-ShV" secondAttribute="bottom" constant="70" id="wh7-4N-Fon"/>
+                            <constraint firstItem="Fpf-Um-z6M" firstAttribute="centerX" secondItem="Suu-HX-oEU" secondAttribute="centerX" id="z8F-Ps-Pju"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V3o-8Y-kvM"/>
+                    </view>
+                    <connections>
+                        <outlet property="fbBtn" destination="U45-kM-T7l" id="IIJ-Oy-ben"/>
+                        <outlet property="loginBtn" destination="D1B-bv-oFn" id="Bdn-Go-rWd"/>
+                        <outlet property="registerBtn" destination="J8k-6e-vEF" id="JTo-Tg-JPN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7c-68-1vx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="222.99107142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fb" width="128" height="128"/>
+        <image name="google" width="128" height="128"/>
+        <image name="insta" width="128" height="128"/>
+        <image name="logo2" width="771" height="668"/>
+        <image name="twiter" width="128" height="128"/>
+    </resources>
+</document>

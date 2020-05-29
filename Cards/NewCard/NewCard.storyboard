@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Card View Controller-->
+        <scene sceneID="Qwp-dL-Rqn">
+            <objects>
+                <viewController storyboardIdentifier="NewCardViewController" id="ITx-NW-Btl" customClass="NewCardViewController" customModule="Keeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UsZ-iz-yFh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="193" translatesAutoresizingMaskIntoConstraints="NO" id="HhD-YT-mgg" customClass="TinyCreditCardView" customModule="TinyCreditCard" customModuleProvider="target">
+                                <rect key="frame" x="20" y="74" width="374" height="193"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.074509803920000006" green="0.074509803920000006" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="HhD-YT-mgg" firstAttribute="leading" secondItem="Sin-GX-or8" secondAttribute="leading" constant="20" id="5Ga-HL-pUu"/>
+                            <constraint firstItem="HhD-YT-mgg" firstAttribute="top" secondItem="Sin-GX-or8" secondAttribute="top" constant="30" id="cGD-Mt-By1"/>
+                            <constraint firstItem="Sin-GX-or8" firstAttribute="trailing" secondItem="HhD-YT-mgg" secondAttribute="trailing" constant="20" id="eFP-bo-OhJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sin-GX-or8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHH-Zh-p5i" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>
