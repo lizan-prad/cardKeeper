@@ -12,6 +12,7 @@ import CreditCardForm
 import FirebaseDatabase
 import FirebaseAuth
 import SwiftyRSA
+
 class NewCardViewController: UIViewController, CardInfoDelegate {
   
     
@@ -27,12 +28,13 @@ class NewCardViewController: UIViewController, CardInfoDelegate {
         cardView.delegate = self
       
     }
-    func didReceiveCardInfo(number: String, expiryDate: String, scv: String, cardType: String) {
-        let data = ["CardNo": number, "expData": expiryDate, "CSC": scv, "cardType": cardType]
+    func didReceiveCardInfo(number: String, expiryDate: String, scv: String, cardType: String, name: String, skin: String) {
+        let data = ["CardNo": number, "expData": expiryDate, "CSC": scv, "cardType": cardType, "Name": name, "skin": skin]
         do {
             let headerJWTData: Data = try JSONSerialization.data(withJSONObject:data,options: JSONSerialization.WritingOptions.prettyPrinted)
             let headerJWTBase64 = headerJWTData.base64EncodedString()
-            ref.child("Users").child(Auth.auth().currentUser?.uid ?? "").setValue(encrypt(data: headerJWTBase64) ?? "")
+            ref.child("Users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["\(Date().timeIntervalSince1970)".replacingOccurrences(of: ".", with: "") : encrypt(data: headerJWTBase64) ?? ""])
+            self.dismiss(animated: true, completion: nil)
         } catch {
             print("could not make data")
         }

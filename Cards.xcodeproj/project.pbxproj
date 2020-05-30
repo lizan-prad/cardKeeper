@@ -24,6 +24,9 @@
 		BE37E9FF24819CC9004890F9 /* TinyCreditCardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37E9FA24819CC8004890F9 /* TinyCreditCardInputView.swift */; };
 		BE37EA0024819CC9004890F9 /* TinyCreditCardBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9FB24819CC8004890F9 /* TinyCreditCardBackView.xib */; };
 		BE37EA0124819CC9004890F9 /* TinyCreditCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9FC24819CC9004890F9 /* TinyCreditCardView.xib */; };
+		BE47BB502482C32C004F1277 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47BB4F2482C32C004F1277 /* CardModel.swift */; };
+		BE47BB522482C9C9004F1277 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47BB512482C9C9004F1277 /* CardTableViewCell.swift */; };
+		BE47BB542482CFD5004F1277 /* AddCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47BB532482CFD5004F1277 /* AddCardCell.swift */; };
 		BECF8F7B247EB381000DB649 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF8F7A247EB381000DB649 /* ColorExtension.swift */; };
 		BECF8F7F247EFF73000DB649 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BECF8F7E247EFF73000DB649 /* GoogleService-Info.plist */; };
 		BEED93BA247EB029009D4394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED93B9247EB029009D4394 /* AppDelegate.swift */; };
@@ -119,6 +122,9 @@
 		BE37EA0224819D58004890F9 /* Dabbington reverse italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dabbington reverse italic.ttf"; sourceTree = "<group>"; };
 		BE37EA0324819D58004890F9 /* CircularStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.otf"; sourceTree = "<group>"; };
 		BE37EA0424819D58004890F9 /* OCR A Std Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR A Std Regular.ttf"; sourceTree = "<group>"; };
+		BE47BB4F2482C32C004F1277 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		BE47BB512482C9C9004F1277 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		BE47BB532482CFD5004F1277 /* AddCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardCell.swift; sourceTree = "<group>"; };
 		BECF8F7A247EB381000DB649 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		BECF8F7E247EFF73000DB649 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEED93B6247EB029009D4394 /* Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +230,8 @@
 			children = (
 				BE37E9E424814A21004890F9 /* Dashboard.storyboard */,
 				BE37E9E624814A2C004890F9 /* DashboardViewController.swift */,
+				BE47BB512482C9C9004F1277 /* CardTableViewCell.swift */,
+				BE47BB532482CFD5004F1277 /* AddCardCell.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -254,6 +262,14 @@
 			path = lotte;
 			sourceTree = "<group>";
 		};
+		BE47BB4E2482C31D004F1277 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE47BB4F2482C32C004F1277 /* CardModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BEED93AD247EB029009D4394 = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +295,7 @@
 		BEED93B8247EB029009D4394 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				BE47BB4E2482C31D004F1277 /* Models */,
 				BE37E9F224818596004890F9 /* NewCard */,
 				BE37E9F724819CAC004890F9 /* lotte */,
 				BE37E9E324814A0E004890F9 /* Dashboard */,
@@ -680,14 +697,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE37E9FF24819CC9004890F9 /* TinyCreditCardInputView.swift in Sources */,
+				BE47BB522482C9C9004F1277 /* CardTableViewCell.swift in Sources */,
 				BEED9429247EB0E0009D4394 /* LoginViewController.swift in Sources */,
 				BEED93BA247EB029009D4394 /* AppDelegate.swift in Sources */,
 				BE37E9FD24819CC9004890F9 /* TinyCreditCardView.swift in Sources */,
 				BE37E9E724814A2C004890F9 /* DashboardViewController.swift in Sources */,
 				BE37E9FE24819CC9004890F9 /* TinyCreditCardBackView.swift in Sources */,
+				BE47BB542482CFD5004F1277 /* AddCardCell.swift in Sources */,
 				BEED93BC247EB029009D4394 /* SceneDelegate.swift in Sources */,
 				BECF8F7B247EB381000DB649 /* ColorExtension.swift in Sources */,
 				BE37E9F6248185AD004890F9 /* NewCardViewController.swift in Sources */,
+				BE47BB502482C32C004F1277 /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

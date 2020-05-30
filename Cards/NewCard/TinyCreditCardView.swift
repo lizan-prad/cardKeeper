@@ -20,7 +20,7 @@ fileprivate extension UIScrollView {
 
 protocol CardInfoDelegate {
     
-    func didReceiveCardInfo(number: String, expiryDate: String, scv: String, cardType: String)
+    func didReceiveCardInfo(number: String, expiryDate: String, scv: String, cardType: String, name: String, skin: String)
 }
 
 class TinyCreditCardView: UIView {
@@ -139,13 +139,18 @@ private extension TinyCreditCardView {
             self.cardNumberLabel.text = text
             if text.hasPrefix("4") { // visa
                 self.cardBrandImageView.image = #imageLiteral(resourceName: "visa")
+                self.focusArea.layer.borderColor = UIColor.init(hex: "E6C231").cgColor
             } else if text.hasPrefix("5") || text.hasPrefix("2") { // mastercard
                 self.cardBrandImageView.image = #imageLiteral(resourceName: "mastercard")
+                self.focusArea.layer.borderColor = UIColor.init(hex: "E6C231").cgColor
             } else if text.hasPrefix("3") { // amex
                 self.cardBrandImageView.image = #imageLiteral(resourceName: "amex")
+                self.focusArea.layer.borderColor = UIColor.init(hex: "E6C231").cgColor
             } else if text.hasPrefix("6") { // discover
                 self.cardBrandImageView.image = UIImage.init(named: "discover")
+                self.focusArea.layer.borderColor = UIColor.init(hex: "E6C231").cgColor
             } else {
+                self.focusArea.layer.borderColor = UIColor.red.cgColor
                 self.cardBrandImageView.image = nil
             }
             self.cardBackView.cardBrandImage = self.cardBrandImageView.image
@@ -186,6 +191,16 @@ private extension TinyCreditCardView {
                     self.cardFrontView.isHidden = false
                     self.cardBackView.isHidden = true
                 })
+            } else if self.cardBrandImageView.image == nil {
+                self.scrollView.scrollTo(page: TinyCreditCardInputView.InputType.cardNumber.rawValue)
+                self.cardFrontView.layer.transform = CATransform3DIdentity
+                self.cardBackView.layer.transform = CATransform3DIdentity
+                let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+
+                UIView.transition(with: self.cardContainerView, duration: 0.5, options: transitionOptions, animations: {
+                    self.cardFrontView.isHidden = false
+                    self.cardBackView.isHidden = true
+                })
             } else {
                 self.scrollView.scrollTo(page: TinyCreditCardInputView.InputType.cardNumber.rawValue)
                 self.cardFrontView.layer.transform = CATransform3DIdentity
@@ -196,8 +211,8 @@ private extension TinyCreditCardView {
                     self.cardFrontView.isHidden = false
                     self.cardBackView.isHidden = true
                 })
-                self.cardNumberInputView.resignFirstResponder()
-                self.delegate?.didReceiveCardInfo(number: self.cardNumberLabel?.text ?? "", expiryDate: self.expDateLabel?.text ?? "", scv: self.cardBackView.cscNumber ?? "", cardType: self.getCardName(prefix: "\(self.cardNumberLabel.text?.prefix(1) ?? Substring.init())"))
+               
+                self.delegate?.didReceiveCardInfo(number: self.cardNumberLabel?.text ?? "", expiryDate: self.expDateLabel?.text ?? "", scv: self.cardBackView.cscNumber ?? "", cardType: self.getCardName(prefix: "\(self.cardNumberLabel.text?.prefix(1) ?? Substring.init())"), name: self.cardHolderLabel.text ?? "", skin: "skin\(arc4random_uniform(14) + 2)" )
             }
         }
     }

@@ -19,6 +19,7 @@ pod 'lottie-ios'
 pod 'Stripe'
 pod 'CardIO'
 pod 'SwiftyRSA'
+pod 'ObjectMapper'
   target 'CardsTests' do
     inherit! :search_paths
     # Pods for testing

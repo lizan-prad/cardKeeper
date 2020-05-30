@@ -101,6 +101,7 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - ObjectMapper (3.5.1)
   - PromisesObjC (1.2.8)
   - Stripe (19.2.0)
   - SVProgressHUD (2.2.5)
@@ -116,6 +117,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - lottie-ios
+  - ObjectMapper
   - Stripe
   - SVProgressHUD
   - SwiftyRSA
@@ -144,6 +146,7 @@ SPEC REPOS:
     - leveldb-library
     - lottie-ios
     - nanopb
+    - ObjectMapper
     - PromisesObjC
     - Stripe
     - SVProgressHUD
@@ -172,11 +175,12 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Stripe: d481c2dab9a892fd923f097f854661217f70dc7f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
-PODFILE CHECKSUM: 8d1550e5f3a19c244588392701ddf66e0ad86274
+PODFILE CHECKSUM: 6bd637bbc4a89646c96d2d486d75a7232eb2bc78
 
 COCOAPODS: 1.8.4

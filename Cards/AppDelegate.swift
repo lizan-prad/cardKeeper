@@ -17,6 +17,7 @@
 import UIKit
 import FBSDKCoreKit
 import Firebase
+import FirebaseDatabase
 import SwiftyRSA
 
 var ref: DatabaseReference!

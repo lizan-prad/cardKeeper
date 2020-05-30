@@ -41,17 +41,18 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
 
         let manager = LoginManager.init()
         manager.logIn(permissions: ["public_profile", "email"], from: self) { (results, error) in
-            
-            let cred = FacebookAuthProvider.credential(withAccessToken: results?.token?.tokenString ?? "")
-            Auth.auth().signIn(with: cred) { (authResult, error) in
-
-                let vc = UIStoryboard.init(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
-                let nav = UINavigationController.init(rootViewController: vc)
-                nav.modalPresentationStyle = .fullScreen
-                nav.navigationBar.isTranslucent = false
-                nav.navigationBar.barTintColor = UIColor.init(hex: "131318")
-                self.present( nav, animated: true, completion: nil)
-                
+            if results?.token != nil {
+                let cred = FacebookAuthProvider.credential(withAccessToken: results?.token?.tokenString ?? "")
+                Auth.auth().signIn(with: cred) { (authResult, error) in
+                    
+                    let vc = UIStoryboard.init(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+                    let nav = UINavigationController.init(rootViewController: vc)
+                    nav.modalPresentationStyle = .fullScreen
+                    nav.navigationBar.isTranslucent = false
+                    nav.navigationBar.barTintColor = UIColor.init(hex: "131318")
+                    self.present( nav, animated: true, completion: nil)
+                    
+                }
             }
         }
     }

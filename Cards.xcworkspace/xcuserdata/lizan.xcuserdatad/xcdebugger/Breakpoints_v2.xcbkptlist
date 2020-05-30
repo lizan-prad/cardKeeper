@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B34938EA-A952-4E2B-95FD-8BA87633151A"
+            uuid = "49B506A7-3CF7-4D3A-BD50-2ADD4A6F3DD4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cards/NewCard/NewCardViewController.swift"
+            filePath = "Cards/NewCard/TinyCreditCardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "decrypt(base64:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BABBDE8A-E920-4BDB-8EFE-4F0C2EF1576A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cards/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "initView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
