@@ -26,17 +26,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skin10" translatesAutoresizingMaskIntoConstraints="NO" id="2jz-Hp-jxz">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
+                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="ued-9Y-Eyv">
-                    <rect key="frame" x="329" y="181" width="30" height="30"/>
+                    <rect key="frame" x="319" y="171" width="40" height="40"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="Uog-Vr-qjr"/>
-                        <constraint firstAttribute="height" constant="30" id="ojb-yV-tNO"/>
+                        <constraint firstAttribute="width" constant="40" id="Uog-Vr-qjr"/>
+                        <constraint firstAttribute="height" constant="40" id="ojb-yV-tNO"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f48-jq-J4V">
                     <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="DDx-cs-1Lp"/>
                     </constraints>
@@ -46,7 +49,7 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTc-vW-Sw5">
                             <rect key="frame" x="0.0" y="25" width="289" height="0.0"/>
-                            <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
                             <color key="textColor" red="0.074509803920000006" green="0.074509803920000006" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -91,7 +94,11 @@
                 <constraint firstItem="f48-jq-J4V" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="UUX-zO-9C8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ued-9Y-Eyv" secondAttribute="bottom" constant="16" id="cq7-Vo-tMn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ued-9Y-Eyv" secondAttribute="trailing" constant="16" id="gLo-5w-jaZ"/>
+                <constraint firstItem="2jz-Hp-jxz" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="mCg-BZ-irR"/>
+                <constraint firstItem="2jz-Hp-jxz" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="qYL-DF-UpH"/>
                 <constraint firstItem="YlO-cz-ZUb" firstAttribute="leading" secondItem="a8g-6m-hp5" secondAttribute="trailing" id="t53-1w-hHV"/>
+                <constraint firstItem="2jz-Hp-jxz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="wm2-Q3-GSm"/>
+                <constraint firstItem="2jz-Hp-jxz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xB4-ie-0hr"/>
                 <constraint firstItem="YlO-cz-ZUb" firstAttribute="top" secondItem="a8g-6m-hp5" secondAttribute="top" id="yTb-hA-Kiy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -99,4 +106,7 @@
             <point key="canvasLocation" x="52" y="25.637181409295355"/>
         </view>
     </objects>
+    <resources>
+        <image name="skin10" width="1280" height="800"/>
+    </resources>
 </document>

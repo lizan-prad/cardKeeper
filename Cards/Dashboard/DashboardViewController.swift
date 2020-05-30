@@ -41,6 +41,8 @@ class DashboardViewController: UIViewController {
         cardAnimation.animationSpeed = 1
         cardAnimation.play()
         
+    
+        
     }
     
     @IBAction func addCardAction(_ sender: Any) {

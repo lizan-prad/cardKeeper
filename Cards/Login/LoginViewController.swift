@@ -41,6 +41,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
 
         let manager = LoginManager.init()
         manager.logIn(permissions: ["public_profile", "email"], from: self) { (results, error) in
+            
             let cred = FacebookAuthProvider.credential(withAccessToken: results?.token?.tokenString ?? "")
             Auth.auth().signIn(with: cred) { (authResult, error) in
 

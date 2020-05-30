@@ -18,18 +18,23 @@ import UIKit
 import FBSDKCoreKit
 import Firebase
 
+var ref: DatabaseReference!
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Swift
     // AppDelegate.swift
     
+    
+
+    
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         FirebaseApp.configure()
-        
+        ref = Database.database().reference()
         
         ApplicationDelegate.shared.application(
             application,

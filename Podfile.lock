@@ -1,4 +1,5 @@
 PODS:
+  - CardIO (5.4.1)
   - CreditCardForm (0.1.8)
   - FBSDKCoreKit (6.0.0):
     - FBSDKCoreKit/Basics (= 6.0.0)
@@ -103,8 +104,12 @@ PODS:
   - PromisesObjC (1.2.8)
   - Stripe (19.2.0)
   - SVProgressHUD (2.2.5)
+  - SwiftyRSA (1.5.0):
+    - SwiftyRSA/ObjC (= 1.5.0)
+  - SwiftyRSA/ObjC (1.5.0)
 
 DEPENDENCIES:
+  - CardIO
   - CreditCardForm
   - FBSDKLoginKit
   - Firebase/Analytics
@@ -113,9 +118,11 @@ DEPENDENCIES:
   - lottie-ios
   - Stripe
   - SVProgressHUD
+  - SwiftyRSA
 
 SPEC REPOS:
   trunk:
+    - CardIO
     - CreditCardForm
     - FBSDKCoreKit
     - FBSDKLoginKit
@@ -140,8 +147,10 @@ SPEC REPOS:
     - PromisesObjC
     - Stripe
     - SVProgressHUD
+    - SwiftyRSA
 
 SPEC CHECKSUMS:
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   CreditCardForm: 7e67bc394545eda9e502652af0858552b4931728
   FBSDKCoreKit: fe738b172590e622c86735b45e20d196848b54df
   FBSDKLoginKit: fa57df1b967fe0e147b25bede6ea4e9cdf4d64be
@@ -166,7 +175,8 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Stripe: d481c2dab9a892fd923f097f854661217f70dc7f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
-PODFILE CHECKSUM: 79b8a0927067f422d049c7ec591028193557802e
+PODFILE CHECKSUM: 8d1550e5f3a19c244588392701ddf66e0ad86274
 
 COCOAPODS: 1.8.4

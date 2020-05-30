@@ -10,17 +10,24 @@ import UIKit
 import Stripe
 import CreditCardForm
 
-class NewCardViewController: UIViewController {
+class NewCardViewController: UIViewController, CardInfoDelegate {
+  
+    
 
     
+    @IBOutlet weak var cardView: TinyCreditCardView!
     
     // Stripe textField
-    let paymentTextField = STPPaymentCardTextField()
+//    let paymentTextField = STPPaymentCardTextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardView.delegate = self
       
     }
-    
+    func didReceiveCardInfo(number: String, expiryDate: String, scv: String, cardType: String) {
+         
+        
+    }
  
 }

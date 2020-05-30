@@ -18,6 +18,11 @@ fileprivate extension UIScrollView {
     }
 }
 
+protocol CardInfoDelegate {
+    
+    func didReceiveCardInfo(number: String, expiryDate: String, scv: String, cardType: String)
+}
+
 class TinyCreditCardView: UIView {
     
     @IBOutlet weak var cardContainerView: UIView!
@@ -40,6 +45,8 @@ class TinyCreditCardView: UIView {
     
     let cardBackView = TinyCreditCardBackView()
     let focusArea = UIView()
+    
+    var delegate: CardInfoDelegate?
     
     var currentPage: Int = 0 {
         didSet {
@@ -136,6 +143,8 @@ private extension TinyCreditCardView {
                 self.cardBrandImageView.image = #imageLiteral(resourceName: "mastercard")
             } else if text.hasPrefix("3") { // amex
                 self.cardBrandImageView.image = #imageLiteral(resourceName: "amex")
+            } else if text.hasPrefix("6") { // discover
+                self.cardBrandImageView.image = UIImage.init(named: "discover")
             } else {
                 self.cardBrandImageView.image = nil
             }
@@ -167,12 +176,50 @@ private extension TinyCreditCardView {
             self.scrollView.scrollTo(page: TinyCreditCardInputView.InputType.cscNumder.rawValue)
         }
         cscNumberInputView.didTapNextButton = {
-            print("Done")
+            if (self.cardNumberLabel?.text?.count ?? 0) < 16 {
+                self.scrollView.scrollTo(page: TinyCreditCardInputView.InputType.cardNumber.rawValue)
+                self.cardFrontView.layer.transform = CATransform3DIdentity
+                self.cardBackView.layer.transform = CATransform3DIdentity
+                let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+
+                UIView.transition(with: self.cardContainerView, duration: 0.5, options: transitionOptions, animations: {
+                    self.cardFrontView.isHidden = false
+                    self.cardBackView.isHidden = true
+                })
+            } else {
+                self.scrollView.scrollTo(page: TinyCreditCardInputView.InputType.cardNumber.rawValue)
+                self.cardFrontView.layer.transform = CATransform3DIdentity
+                self.cardBackView.layer.transform = CATransform3DIdentity
+                let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+
+                UIView.transition(with: self.cardContainerView, duration: 0.5, options: transitionOptions, animations: {
+                    self.cardFrontView.isHidden = false
+                    self.cardBackView.isHidden = true
+                })
+                self.cardNumberInputView.resignFirstResponder()
+                self.delegate?.didReceiveCardInfo(number: self.cardNumberLabel?.text ?? "", expiryDate: self.expDateLabel?.text ?? "", scv: self.cardBackView.cscNumber ?? "", cardType: self.getCardName(prefix: "\(self.cardNumberLabel.text?.prefix(1) ?? Substring.init())"))
+            }
+        }
+    }
+    
+    func getCardName(prefix: String) -> String {
+        switch prefix {
+        case "6":
+            return "Discover"
+        case "5":
+            return "Master Card"
+        case "3":
+            return "American Express"
+        case "4":
+            return "Visa"
+        default:
+            return ""
         }
     }
 }
 
 extension TinyCreditCardView: UIScrollViewDelegate {
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageValue = scrollView.contentOffset.x / scrollView.bounds.width
         let page = Int(pageValue)
@@ -182,7 +229,7 @@ extension TinyCreditCardView: UIScrollViewDelegate {
         print("pageValue: \(pageValue)")
         if pageValue <= CGFloat(TinyCreditCardInputView.InputType.cardNumber.rawValue) {
             let offset: CGFloat = 20 * pageValue
-            focusArea.frame = cardNumberButton.frame.insetBy(dx: offset - 15, dy: offset)
+            focusArea.frame = cardNumberButton.frame.insetBy(dx: offset - 5, dy: offset)
 
         } else if pageValue < CGFloat(TinyCreditCardInputView.InputType.cardHolder.rawValue) {
             let percent = pageValue.truncatingRemainder(dividingBy: 1)

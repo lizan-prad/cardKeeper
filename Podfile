@@ -17,6 +17,8 @@ target 'Cards' do
 pod 'CreditCardForm'
 pod 'lottie-ios'
 pod 'Stripe'
+pod 'CardIO'
+pod 'SwiftyRSA'
   target 'CardsTests' do
     inherit! :search_paths
     # Pods for testing
