@@ -17,6 +17,7 @@
 import UIKit
 import FBSDKCoreKit
 import Firebase
+import SwiftyRSA
 
 var ref: DatabaseReference!
 
@@ -40,7 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
-        
+        if UserDefaults.standard.value(forKey: "PR") == nil {
+        do { let keyPair =  try SwiftyRSA.generateRSAKeyPair(sizeInBits: 2048)
+            let privateKey = try keyPair.privateKey.base64String()
+            let publicKey = try keyPair.publicKey.base64String()
+            UserDefaults.standard.set(privateKey, forKey: "PR")
+            UserDefaults.standard.set(publicKey, forKey: "PB")
+        } catch {
+            print(error)
+        }
+        }
         return true
     }
     
