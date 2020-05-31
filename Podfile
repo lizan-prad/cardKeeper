@@ -22,6 +22,7 @@ target 'Cards' do
   pod 'ObjectMapper'
   pod 'KAPinField'
   pod 'SwiftyOnboard'
+  pod 'CryptoSwift'
   
   target 'CardsTests' do
     inherit! :search_paths

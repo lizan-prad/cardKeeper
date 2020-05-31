@@ -1,6 +1,7 @@
 PODS:
   - CardIO (5.4.1)
   - CreditCardForm (0.1.8)
+  - CryptoSwift (1.3.0)
   - FBSDKCoreKit (6.0.0):
     - FBSDKCoreKit/Basics (= 6.0.0)
     - FBSDKCoreKit/Core (= 6.0.0)
@@ -114,6 +115,7 @@ PODS:
 DEPENDENCIES:
   - CardIO
   - CreditCardForm
+  - CryptoSwift
   - FBSDKLoginKit
   - Firebase/Analytics
   - Firebase/Auth
@@ -130,6 +132,7 @@ SPEC REPOS:
   trunk:
     - CardIO
     - CreditCardForm
+    - CryptoSwift
     - FBSDKCoreKit
     - FBSDKLoginKit
     - Firebase
@@ -161,6 +164,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   CreditCardForm: 7e67bc394545eda9e502652af0858552b4931728
+  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
   FBSDKCoreKit: fe738b172590e622c86735b45e20d196848b54df
   FBSDKLoginKit: fa57df1b967fe0e147b25bede6ea4e9cdf4d64be
   Firebase: 2672e5636b42f977177716317e68346ae5e9de25
@@ -189,6 +193,6 @@ SPEC CHECKSUMS:
   SwiftyOnboard: de60e90c2af23dd61b01ec0c6a8d0be3370f857b
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
-PODFILE CHECKSUM: c0d35f1fbb65aa55a8414ad6f61d404f58c78865
+PODFILE CHECKSUM: 5e1eda38fb9eeae9f64915c90ce8da82e561181f
 
 COCOAPODS: 1.8.4

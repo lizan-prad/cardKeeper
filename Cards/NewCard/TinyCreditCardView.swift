@@ -223,6 +223,8 @@ private extension TinyCreditCardView {
             return "Discover"
         case "5":
             return "Master Card"
+        case "2":
+            return "Master Card"
         case "3":
             return "American Express"
         case "4":

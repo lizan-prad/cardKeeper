@@ -19,6 +19,7 @@
                 <outlet property="cardHolderLabel" destination="WTc-vW-Sw5" id="5if-7r-Gav"/>
                 <outlet property="cscArea" destination="YlO-cz-ZUb" id="Pkb-ls-SVg"/>
                 <outlet property="cscNumberLabel" destination="Zpp-Gd-j1Z" id="hxw-gL-4a0"/>
+                <outlet property="skin" destination="2jz-Hp-jxz" id="iDu-Cg-Nxv"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

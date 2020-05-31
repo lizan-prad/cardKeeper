@@ -128,7 +128,12 @@
                     </view>
                     <connections>
                         <outlet property="cardContainerView" destination="gGU-Sl-tDH" id="jo1-bg-H32"/>
+                        <outlet property="date" destination="9X0-dY-GB6" id="ZJU-s3-DAn"/>
                         <outlet property="frontView" destination="Lx3-uY-g83" id="k07-Je-M2g"/>
+                        <outlet property="logo" destination="x9e-Wt-Lbd" id="ucE-so-ILJ"/>
+                        <outlet property="name" destination="Tzb-as-gLy" id="bY5-qa-rXV"/>
+                        <outlet property="number" destination="UHR-ho-RTk" id="zbX-Gf-sO7"/>
+                        <outlet property="skin" destination="mMD-MV-2Qp" id="o89-XJ-S8S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiv-1W-p6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,7 @@ import UIKit
 
 class TinyCreditCardBackView: UIView {
 
+    @IBOutlet weak var skin: UIImageView!
     @IBOutlet weak var cardBrandImageView: UIImageView!
     @IBOutlet weak var cardHolderLabel: UILabel!
     @IBOutlet weak var cscNumberLabel: UILabel!
@@ -17,6 +18,12 @@ class TinyCreditCardBackView: UIView {
     
     let focusArea = UIView()
 
+    var focus = true {
+        didSet {
+            focusArea.isHidden = !focus
+        }
+    }
+    
     var cscNumber: String? {
         set { cscNumberLabel.text = newValue }
         get { return cscNumberLabel.text }
@@ -74,10 +81,12 @@ private extension TinyCreditCardBackView {
         layer.cornerRadius = 8
         layer.masksToBounds = true
         
-        focusArea.layer.borderColor = UIColor.orange.cgColor
+        focusArea.layer.borderColor = UIColor.init(hex: "E6C231").cgColor
         focusArea.layer.borderWidth = 1
         focusArea.layer.cornerRadius = 6
-        addSubview(focusArea)
+   
+            addSubview(focusArea)
+        
         DispatchQueue.main.async {
             self.focusArea.frame = self.cscArea.frame.insetBy(dx: 6, dy: 6)
         }
