@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "49B506A7-3CF7-4D3A-BD50-2ADD4A6F3DD4"
+            uuid = "71F03584-1C8F-44E3-8044-BEBA75325BDA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cards/NewCard/TinyCreditCardView.swift"
+            filePath = "Cards/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "initView()"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "sceneDidEnterBackground(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

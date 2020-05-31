@@ -121,7 +121,12 @@
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = UIStoryboard.init(name: "PinView", bundle: nil).instantiateViewController(withIdentifier: "PinViewController") as! PinViewController
+        vc.didSuceed = {
+            let vc = UIStoryboard.init(name: "ViewCard", bundle: nil).instantiateViewController(withIdentifier: "ViewCardViewController") as! ViewCardViewController
+            self.present(vc, animated: true, completion: nil)
+        }
+        self.present(vc, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

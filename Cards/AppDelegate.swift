@@ -21,37 +21,46 @@ import FirebaseDatabase
 import SwiftyRSA
 
 var ref: DatabaseReference!
-
+let ad = UIApplication.shared.delegate as! AppDelegate
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+
+
+class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
     
     // Swift
     // AppDelegate.swift
     
+    var window: UIWindow?
     
-
     
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
         FirebaseApp.configure()
         ref = Database.database().reference()
+        
+        
+        
+        if UserDefaults.standard.value(forKey: "PR") == nil {
+            do { let keyPair =  try SwiftyRSA.generateRSAKeyPair(sizeInBits: 2048)
+                let privateKey = try keyPair.privateKey.base64String()
+                let publicKey = try keyPair.publicKey.base64String()
+                UserDefaults.standard.set(privateKey, forKey: "PR")
+                UserDefaults.standard.set(publicKey, forKey: "PB")
+            } catch {
+                print(error)
+            }
+        }
+        
+        
         
         ApplicationDelegate.shared.application(
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
-        if UserDefaults.standard.value(forKey: "PR") == nil {
-        do { let keyPair =  try SwiftyRSA.generateRSAKeyPair(sizeInBits: 2048)
-            let privateKey = try keyPair.privateKey.base64String()
-            let publicKey = try keyPair.publicKey.base64String()
-            UserDefaults.standard.set(privateKey, forKey: "PR")
-            UserDefaults.standard.set(publicKey, forKey: "PB")
-        } catch {
-            print(error)
-        }
-        }
         return true
     }
     

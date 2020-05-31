@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Volte-Light.ttf">
+            <string>Volte-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Pin View Controller-->
+        <scene sceneID="FcY-m5-qfR">
+            <objects>
+                <viewController storyboardIdentifier="PinViewController" id="nhp-Ne-h1u" customClass="PinViewController" customModule="Keeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Qo-Ug-ur1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9UE-3p-eI6" customClass="KAPinField" customModule="KAPinField">
+                                <rect key="frame" x="40" y="389.5" width="334" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="pinField:" destination="W3x-2U-zWF" eventType="editingDidEnd" id="xBD-F4-xqn"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zh7-I5-qAi" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="107" y="84" width="200" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="hXs-SV-RZ1"/>
+                                    <constraint firstAttribute="width" constant="200" id="its-JW-iBJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="lock"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your security code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cn-xW-SsH">
+                                <rect key="frame" x="140" y="249" width="134" height="12"/>
+                                <fontDescription key="fontDescription" name="Volte-Light" family="Volte" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.074509803920000006" green="0.074509803920000006" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="9UE-3p-eI6" firstAttribute="centerY" secondItem="3Qo-Ug-ur1" secondAttribute="centerY" constant="-50" id="3FL-OX-Weh"/>
+                            <constraint firstItem="Zh7-I5-qAi" firstAttribute="centerX" secondItem="3Qo-Ug-ur1" secondAttribute="centerX" id="AB9-zf-j6o"/>
+                            <constraint firstItem="9UE-3p-eI6" firstAttribute="centerX" secondItem="3Qo-Ug-ur1" secondAttribute="centerX" id="WES-9Z-xi6"/>
+                            <constraint firstItem="8Cn-xW-SsH" firstAttribute="centerX" secondItem="Zh7-I5-qAi" secondAttribute="centerX" id="bqF-oI-3Lx"/>
+                            <constraint firstItem="8Cn-xW-SsH" firstAttribute="top" secondItem="Zh7-I5-qAi" secondAttribute="bottom" constant="15" id="oQj-Lz-xFE"/>
+                            <constraint firstItem="b41-hr-Msj" firstAttribute="trailing" secondItem="9UE-3p-eI6" secondAttribute="trailing" constant="40" id="pbR-BC-cad"/>
+                            <constraint firstItem="9UE-3p-eI6" firstAttribute="leading" secondItem="b41-hr-Msj" secondAttribute="leading" constant="40" id="uBa-j9-yA1"/>
+                            <constraint firstItem="Zh7-I5-qAi" firstAttribute="top" secondItem="b41-hr-Msj" secondAttribute="top" constant="40" id="zhV-9G-9sa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b41-hr-Msj"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="Zh7-I5-qAi" id="Hv5-ce-8lv"/>
+                        <outlet property="pinField" destination="9UE-3p-eI6" id="Lvh-r0-CB3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssC-Pw-4jm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="W3x-2U-zWF" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="182.8125"/>
+        </scene>
+    </scenes>
+</document>
