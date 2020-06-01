@@ -9,6 +9,8 @@
 import UIKit
 import KAPinField
 import Lottie
+import FirebaseAuth
+import FirebaseDatabase
 
 class PinViewController: UIViewController {
     
@@ -16,7 +18,7 @@ class PinViewController: UIViewController {
     @IBOutlet weak var pinField: KAPinField!
     
     var didSuceed: (() -> ())?
-    
+    var pin = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +31,8 @@ class PinViewController: UIViewController {
         animationView.backgroundColor = UIColor.init(hex: "131318")
         animationView.animationSpeed = 1
         animationView.play()
+        
+        getPin()
     }
     
     func pinSetup() {
@@ -57,14 +61,33 @@ class PinViewController: UIViewController {
 //        pinField.appearance.backBorderActiveColor = UIColor.white
     }
     
+    func getPin() {
+        ref.child("Profile").child(Auth.auth().currentUser?.uid ?? "").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? String {
+                let dcrypted = self.decrypt(base64: value)
+                let data = Data.init(base64Encoded: dcrypted ?? "")
+                self.pin = String.init(data: data ?? Data(), encoding: .utf8) ?? ""
+            }
+        }) { (error) in
+            
+        }
+    }
+    
     
 }
 
 extension PinViewController : KAPinFieldDelegate {
   func pinField(_ field: KAPinField, didFinishWith code: String) {
-    
-    self.dismiss(animated: true) {
-        self.didSuceed?()
+    if pin != code {
+        pinField.animateFailure()
+        pinField.text = nil
+        return
     }
+    pinField.animateSuccess(with: "Verified") {
+        self.dismiss(animated: true) {
+            self.didSuceed?()
+        }
+    }
+    
   }
 }

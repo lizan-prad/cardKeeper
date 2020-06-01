@@ -34,6 +34,8 @@
         self.navigationController?.navigationBar.shadowImage = UIImage()
         animationView.contentMode = .scaleAspectFit
         
+        self.navigationController?.navigationBar.tintColor = UIColor.init(named: "E6C231")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "setting"), style: .done, target: self, action: #selector(tapSetting))
         // 2. Set animation loop mode
         let img = UIImageView()
         img.image = UIImage.init(named: "title")
@@ -56,6 +58,10 @@
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundView = backgroundView 
+    }
+    
+    @objc func tapSetting() {
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

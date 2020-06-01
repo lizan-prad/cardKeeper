@@ -46,12 +46,20 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                 Auth.auth().signIn(with: cred) { (authResult, error) in
                     
                     let vc = UIStoryboard.init(name: "AddPin", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController") as! AddPinViewController
-                    
-//                    let vc = UIStoryboard.init(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
-//                    let nav = UINavigationController.init(rootViewController: vc)
-//                    nav.modalPresentationStyle = .fullScreen
-//                    nav.navigationBar.isTranslucent = false
-//                    nav.navigationBar.barTintColor = UIColor.init(hex: "131318")
+                    vc.didSuceed = { (p1,p2) in
+                        let utf8str = p1.data(using: .utf8)
+
+                     let base64Encoded = utf8str?.base64EncodedString()
+                        
+                        ref.child("Profile").child(Auth.auth().currentUser?.uid ?? "").setValue(self.encrypt(data: base64Encoded ?? "") ?? "")
+                        let vc = UIStoryboard.init(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+                        let nav = UINavigationController.init(rootViewController: vc)
+                        nav.modalPresentationStyle = .fullScreen
+                        nav.navigationBar.isTranslucent = false
+                        nav.navigationBar.barTintColor = UIColor.init(hex: "131318")
+                        self.present( nav, animated: true, completion: nil)
+                    }
+
                     self.present( vc, animated: true, completion: nil)
                     
                 }

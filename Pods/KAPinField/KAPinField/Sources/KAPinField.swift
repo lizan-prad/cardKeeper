@@ -240,7 +240,10 @@ public class KAPinField : UITextField {
             self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
             self.alpha = 0
         }) { _ in
-            self.attributedText = NSAttributedString(string: text, attributes: self.attributes)
+            var attrib = self.attributes
+            attrib[.foregroundColor] = UIColor.init(red: 230, green: 194, blue: 49, alpha: 1)
+            self.attributedText = NSAttributedString(string: text, attributes: attrib)
+            
             UIView.animate(withDuration: 0.2, animations: {
                 self.transform = CGAffineTransform.identity
                 self.alpha = 1.0
