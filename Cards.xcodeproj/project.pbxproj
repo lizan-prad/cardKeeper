@@ -10,6 +10,9 @@
 		06812C717F7C768469CAFA6D /* Pods_Cards_CardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189443A51E56AD732D34247B /* Pods_Cards_CardsUITests.framework */; };
 		21C1AF0744D139331DDD2CCA /* Pods_CardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D87F8D673D7531091C9DF86 /* Pods_CardsTests.framework */; };
 		A8406C61CCB3A3457F3715FE /* Pods_Cards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50579E04908195EFCB92E2B8 /* Pods_Cards.framework */; };
+		BE19412824857D2600B2B6AA /* cut-card.json in Resources */ = {isa = PBXBuildFile; fileRef = BE19412724857D2600B2B6AA /* cut-card.json */; };
+		BE19412A24857E0600B2B6AA /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE19412924857E0600B2B6AA /* ActionViewController.swift */; };
+		BE19412C248581E500B2B6AA /* door.json in Resources */ = {isa = PBXBuildFile; fileRef = BE19412B248581E500B2B6AA /* door.json */; };
 		BE37E9E524814A21004890F9 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9E424814A21004890F9 /* Dashboard.storyboard */; };
 		BE37E9E724814A2C004890F9 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37E9E624814A2C004890F9 /* DashboardViewController.swift */; };
 		BE37E9E924816E1F004890F9 /* yellow.json in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9E824816E1F004890F9 /* yellow.json */; };
@@ -115,6 +118,9 @@
 		6770A5F2A4CE113F64C23684 /* Pods-Cards-CardsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cards-CardsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Cards-CardsUITests/Pods-Cards-CardsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		88B89E8D0F760D26BF771278 /* Pods-Cards-CardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cards-CardsUITests.release.xcconfig"; path = "Target Support Files/Pods-Cards-CardsUITests/Pods-Cards-CardsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D87F8D673D7531091C9DF86 /* Pods_CardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE19412724857D2600B2B6AA /* cut-card.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cut-card.json"; sourceTree = "<group>"; };
+		BE19412924857E0600B2B6AA /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		BE19412B248581E500B2B6AA /* door.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = door.json; sourceTree = "<group>"; };
 		BE37E9E424814A21004890F9 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		BE37E9E624814A2C004890F9 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		BE37E9E824816E1F004890F9 /* yellow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yellow.json; sourceTree = "<group>"; };
@@ -252,6 +258,7 @@
 				BE37E9E624814A2C004890F9 /* DashboardViewController.swift */,
 				BE47BB512482C9C9004F1277 /* CardTableViewCell.swift */,
 				BE47BB532482CFD5004F1277 /* AddCardCell.swift */,
+				BE19412924857E0600B2B6AA /* ActionViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -275,10 +282,12 @@
 		BE37E9F724819CAC004890F9 /* lotte */ = {
 			isa = PBXGroup;
 			children = (
+				BE19412B248581E500B2B6AA /* door.json */,
 				BED8EA012484D38F00525825 /* safe.json */,
 				BEB8112E248404FB00F3C952 /* secure.json */,
 				BE37E9EB24817010004890F9 /* line.json */,
 				BE47BB5E2483A7C0004F1277 /* lock.json */,
+				BE19412724857D2600B2B6AA /* cut-card.json */,
 				BE37E9EE248170DA004890F9 /* card.json */,
 				BE37E9F02481854F004890F9 /* card2.json */,
 				BE37E9E824816E1F004890F9 /* yellow.json */,
@@ -587,6 +596,7 @@
 				BEED946D247EB0F6009D4394 /* SanFranciscoText-MediumItalic.otf in Resources */,
 				BEED9430247EB0EA009D4394 /* MajesticPiercingBasilisk-max-1mb.gif in Resources */,
 				BEED9462247EB0F6009D4394 /* Roboto-Regular.ttf in Resources */,
+				BE19412824857D2600B2B6AA /* cut-card.json in Resources */,
 				BEED9474247EB0F6009D4394 /* SanFranciscoText-Light.otf in Resources */,
 				BE37E9E524814A21004890F9 /* Dashboard.storyboard in Resources */,
 				BEED9463247EB0F6009D4394 /* Volte-Light.ttf in Resources */,
@@ -605,6 +615,7 @@
 				BEED942F247EB0EA009D4394 /* TPG-UK-Launch-CardsFanning-02.gif in Resources */,
 				BEED945C247EB0F6009D4394 /* Himalayabold.ttf in Resources */,
 				BEED947B247EB0F6009D4394 /* Volte-Regular.ttf in Resources */,
+				BE19412C248581E500B2B6AA /* door.json in Resources */,
 				BEED945E247EB0F6009D4394 /* Volte-MediumItalic.ttf in Resources */,
 				BEED9476247EB0F6009D4394 /* Roboto-BlackItalic.ttf in Resources */,
 				BE37EA0124819CC9004890F9 /* TinyCreditCardView.xib in Resources */,
@@ -757,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE37E9FF24819CC9004890F9 /* TinyCreditCardInputView.swift in Sources */,
+				BE19412A24857E0600B2B6AA /* ActionViewController.swift in Sources */,
 				BE47BB522482C9C9004F1277 /* CardTableViewCell.swift in Sources */,
 				BE47BB5D2483A1C0004F1277 /* PinViewController.swift in Sources */,
 				BEED9429247EB0E0009D4394 /* LoginViewController.swift in Sources */,

@@ -58,9 +58,21 @@ class ViewCardViewController: UIViewController {
     
     func setup() {
         self.cardHolderNumber.text = model?.number
+        self.cardHolderNumber.isUserInteractionEnabled = true
+        self.cardHolderNumber.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(copyNumber)))
+        
         self.cardHolderName.text = model?.name
+        self.cardHolderName.isUserInteractionEnabled = true
+        self.cardHolderName.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(copyName)))
+        
         self.descExpiry.text = model?.expiry
+        self.descExpiry.isUserInteractionEnabled = true
+        self.descExpiry.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(copyExpiry)))
+        
         self.descCvc.text = model?.cvc
+        self.descCvc.isUserInteractionEnabled = true
+        self.descCvc.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(copyCVC)))
+        
         self.card.image = model?.cardType?.getCardLogo()
         
         self.number.text = model?.number
@@ -74,6 +86,37 @@ class ViewCardViewController: UIViewController {
         self.cardBackView.skin.image = UIImage.init(named: model?.skin ?? "")
     }
 
+    @objc func copyNumber() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = model?.number ?? ""
+        timer()
+    }
+    
+    func timer() {
+        self.startAnimating(CGSize.init(width: 40, height: 40), message: "Copied", messageFont: UIFont.init(name: "Volte-Regular", size: 12), type: .blank, color: UIColor.init(hex: "E6C231"), padding: nil, displayTimeThreshold: 1, minimumDisplayTime: 1, backgroundColor: nil, textColor: UIColor.init(hex: "E6C231"), fadeInAnimation: nil)
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (_) in
+            self.stopAnimating()
+        }
+    }
+    
+    @objc func copyName() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = model?.name ?? ""
+        timer()
+    }
+    
+    @objc func copyExpiry() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = model?.expiry ?? ""
+        timer()
+    }
+    
+    @objc func copyCVC() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = model?.cvc ?? ""
+        timer()
+    }
+    
     @objc func flip() {
         self.frontView.layer.transform = CATransform3DIdentity
         self.cardBackView.layer.transform = CATransform3DIdentity

@@ -23,6 +23,10 @@ target 'Cards' do
   pod 'KAPinField'
   pod 'SwiftyOnboard'
   pod 'CryptoSwift'
+  pod 'NVActivityIndicatorView'
+  
+  pod 'XLActionController'
+  pod 'XLActionController/Twitter'
   
   target 'CardsTests' do
     inherit! :search_paths

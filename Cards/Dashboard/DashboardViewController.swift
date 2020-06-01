@@ -11,6 +11,7 @@
  import FirebaseAuth
  import FirebaseDatabase
  import ObjectMapper
+ import XLActionController
  
  class DashboardViewController: UIViewController {
     
@@ -36,7 +37,8 @@
         
         self.navigationController?.navigationBar.tintColor = UIColor.init(named: "E6C231")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "setting"), style: .done, target: self, action: #selector(tapSetting))
-        // 2. Set animation loop mode
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "log"), style: .done, target: self, action: #selector(logOut))
+//        // 2. Set animation loop mode
         let img = UIImageView()
         img.image = UIImage.init(named: "title")
         img.contentMode = .scaleAspectFit
@@ -61,8 +63,21 @@
     }
     
     @objc func tapSetting() {
-        
+        let alert = TwitterActionController()
+       alert.headerData = "Settings"
+        alert.addAction(Action(ActionData(title: "About", subtitle: "@Keeper", image: UIImage(named: "title")!), style: .default, handler: { action in
+           // do something useful
+        }))
+        alert.addAction(Action(ActionData(title: "Profile", subtitle: "\(Auth.auth().currentUser?.displayName ?? "")", image: UIImage(named: "fb")!), style: .default, handler: { action in
+          // do something useful
+       }))
+        alert.addAction(Action(ActionData(title: "Log Out", subtitle: "Quit?", image: UIImage(named: "log")!), style: .default, handler: { action in
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActionViewController") as! ActionViewController
+            self.present(vc, animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
