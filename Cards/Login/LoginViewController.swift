@@ -48,7 +48,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                 Auth.auth().signIn(with: cred) { (authResult, error) in
                     ref.child("Profile").child(Auth.auth().currentUser?.uid ?? "").observeSingleEvent(of: .value) { (snapshot) in
                         self.stopAnimating()
-                        if snapshot.value == nil {
+                        if (snapshot.value as? String) == nil {
                             let vc = UIStoryboard.init(name: "AddPin", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController") as! AddPinViewController
                             vc.didSuceed = { (p1,p2) in
                                 let utf8str = p1.data(using: .utf8)
