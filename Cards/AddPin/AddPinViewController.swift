@@ -89,7 +89,9 @@ extension AddPinViewController : KAPinFieldDelegate {
         if pin1 == "" {
             self.pin1 = code
             self.pinDescLabel.text = "Confirm Your PIN"
-            field.text = nil
+            self.pinField.animateNull()
+            self.pinField.text = nil
+            
             return
         }
         pin2 = code

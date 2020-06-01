@@ -17,6 +17,18 @@ class ViewCardViewController: UIViewController {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var skin: UIImageView!
+    @IBOutlet weak var tabView: UIView!
+    
+    @IBOutlet weak var cont: UIView!
+    
+    @IBOutlet weak var cardHolderNumber: UILabel!
+    @IBOutlet weak var cardHolderName: UILabel!
+    @IBOutlet weak var descExpiry: UILabel!
+    @IBOutlet weak var descCvc: UILabel!
+    @IBOutlet weak var card: UIImageView!
+    
+    
+    
     
     let cardBackView = TinyCreditCardBackView()
     
@@ -27,6 +39,10 @@ class ViewCardViewController: UIViewController {
         cardBackView.focus = false
         setup()
         frontView.layer.cornerRadius = 8
+        cont.layer.borderColor = UIColor.init(hex: "E6C231", alpha: 0.6).cgColor
+        cont.layer.borderWidth = 1
+        cont.layer.cornerRadius = 22
+        tabView.rounded()
         
         self.cardContainerView.addSubview(cardBackView)
         cardBackView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +57,12 @@ class ViewCardViewController: UIViewController {
     }
     
     func setup() {
+        self.cardHolderNumber.text = model?.number
+        self.cardHolderName.text = model?.name
+        self.descExpiry.text = model?.expiry
+        self.descCvc.text = model?.cvc
+        self.card.image = model?.cardType?.getCardLogo()
+        
         self.number.text = model?.number
         self.name.text = model?.name
         self.date.text = model?.expiry

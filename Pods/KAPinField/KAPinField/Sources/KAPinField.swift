@@ -199,6 +199,30 @@ public class KAPinField : UITextField {
         return self.invisibleField.becomeFirstResponder()
     }
     
+    public func animateNull(_ completion : (() -> Void)? = nil) {
+        
+//        guard !self.isAnimating else {
+//            return
+//        }
+//
+//        isAnimating = true
+
+//        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            self.isAnimating = false
+            completion?()
+            self.reloadAppearance()
+        })
+        
+//        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+//        animation.timingFunction = CAMediaTimingFunction.init(name: .linear)
+//        animation.duration = 0.6
+//        animation.values = [-14.0, 14.0, -14.0, 14.0, -8.0, 8.0, -4.0, 4.0, 0.0 ]
+//        layer.add(animation, forKey: "shake")
+        
+//        CATransaction.commit()
+    }
+    
     public func animateFailure(_ completion : (() -> Void)? = nil) {
         
         guard !self.isAnimating else {
