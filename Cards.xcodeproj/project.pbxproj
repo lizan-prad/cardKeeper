@@ -13,7 +13,6 @@
 		BE37E9E524814A21004890F9 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9E424814A21004890F9 /* Dashboard.storyboard */; };
 		BE37E9E724814A2C004890F9 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37E9E624814A2C004890F9 /* DashboardViewController.swift */; };
 		BE37E9E924816E1F004890F9 /* yellow.json in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9E824816E1F004890F9 /* yellow.json */; };
-		BE37E9EC24817010004890F9 /* envelop.json in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9EA2481700F004890F9 /* envelop.json */; };
 		BE37E9ED24817010004890F9 /* line.json in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9EB24817010004890F9 /* line.json */; };
 		BE37E9EF248170DA004890F9 /* card.json in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9EE248170DA004890F9 /* card.json */; };
 		BE37E9F12481854F004890F9 /* card2.json in Resources */ = {isa = PBXBuildFile; fileRef = BE37E9F02481854F004890F9 /* card2.json */; };
@@ -37,6 +36,9 @@
 		BEB8112F248404FB00F3C952 /* secure.json in Resources */ = {isa = PBXBuildFile; fileRef = BEB8112E248404FB00F3C952 /* secure.json */; };
 		BECF8F7B247EB381000DB649 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF8F7A247EB381000DB649 /* ColorExtension.swift */; };
 		BECF8F7F247EFF73000DB649 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BECF8F7E247EFF73000DB649 /* GoogleService-Info.plist */; };
+		BED8E9FE2484CCF000525825 /* AddPin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED8E9FD2484CCF000525825 /* AddPin.storyboard */; };
+		BED8EA002484CD0D00525825 /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8E9FF2484CD0D00525825 /* AddPinViewController.swift */; };
+		BED8EA022484D38F00525825 /* safe.json in Resources */ = {isa = PBXBuildFile; fileRef = BED8EA012484D38F00525825 /* safe.json */; };
 		BEED93BA247EB029009D4394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED93B9247EB029009D4394 /* AppDelegate.swift */; };
 		BEED93BC247EB029009D4394 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED93BB247EB029009D4394 /* SceneDelegate.swift */; };
 		BEED93C3247EB02B009D4394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEED93C2247EB02B009D4394 /* Assets.xcassets */; };
@@ -116,7 +118,6 @@
 		BE37E9E424814A21004890F9 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		BE37E9E624814A2C004890F9 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		BE37E9E824816E1F004890F9 /* yellow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yellow.json; sourceTree = "<group>"; };
-		BE37E9EA2481700F004890F9 /* envelop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = envelop.json; sourceTree = "<group>"; };
 		BE37E9EB24817010004890F9 /* line.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = line.json; sourceTree = "<group>"; };
 		BE37E9EE248170DA004890F9 /* card.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card.json; sourceTree = "<group>"; };
 		BE37E9F02481854F004890F9 /* card2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card2.json; sourceTree = "<group>"; };
@@ -143,6 +144,9 @@
 		BEB8112E248404FB00F3C952 /* secure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secure.json; sourceTree = "<group>"; };
 		BECF8F7A247EB381000DB649 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		BECF8F7E247EFF73000DB649 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BED8E9FD2484CCF000525825 /* AddPin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPin.storyboard; sourceTree = "<group>"; };
+		BED8E9FF2484CD0D00525825 /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
+		BED8EA012484D38F00525825 /* safe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = safe.json; sourceTree = "<group>"; };
 		BEED93B6247EB029009D4394 /* Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEED93B9247EB029009D4394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEED93BB247EB029009D4394 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -271,7 +275,7 @@
 		BE37E9F724819CAC004890F9 /* lotte */ = {
 			isa = PBXGroup;
 			children = (
-				BE37E9EA2481700F004890F9 /* envelop.json */,
+				BED8EA012484D38F00525825 /* safe.json */,
 				BEB8112E248404FB00F3C952 /* secure.json */,
 				BE37E9EB24817010004890F9 /* line.json */,
 				BE47BB5E2483A7C0004F1277 /* lock.json */,
@@ -308,6 +312,15 @@
 			path = WalkThrough;
 			sourceTree = "<group>";
 		};
+		BED8E9FC2484CCD900525825 /* AddPin */ = {
+			isa = PBXGroup;
+			children = (
+				BED8E9FD2484CCF000525825 /* AddPin.storyboard */,
+				BED8E9FF2484CD0D00525825 /* AddPinViewController.swift */,
+			);
+			path = AddPin;
+			sourceTree = "<group>";
+		};
 		BEED93AD247EB029009D4394 = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +346,7 @@
 		BEED93B8247EB029009D4394 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				BED8E9FC2484CCD900525825 /* AddPin */,
 				BE47BB602483F19F004F1277 /* WalkThrough */,
 				BE47BB5924839EEB004F1277 /* PinView */,
 				BE47BB4E2482C31D004F1277 /* Models */,
@@ -584,6 +598,7 @@
 				BEED9458247EB0F6009D4394 /* kurti-dev-040-bold.ttf in Resources */,
 				BEED9478247EB0F6009D4394 /* Roboto-Bold.ttf in Resources */,
 				BE37E9F4248185A4004890F9 /* NewCard.storyboard in Resources */,
+				BED8E9FE2484CCF000525825 /* AddPin.storyboard in Resources */,
 				BEED9477247EB0F6009D4394 /* Volte-LightItalic.ttf in Resources */,
 				BEED9471247EB0F6009D4394 /* Volte-SemiBold.ttf in Resources */,
 				BEED946B247EB0F6009D4394 /* SanFranciscoText-Heavy.otf in Resources */,
@@ -604,13 +619,13 @@
 				BE37EA0024819CC9004890F9 /* TinyCreditCardBackView.xib in Resources */,
 				BEED9466247EB0F6009D4394 /* SanFranciscoText-BoldItalic.otf in Resources */,
 				BEED9464247EB0F6009D4394 /* Roboto-MediumItalic.ttf in Resources */,
-				BE37E9EC24817010004890F9 /* envelop.json in Resources */,
 				BE37E9ED24817010004890F9 /* line.json in Resources */,
 				BEED9461247EB0F6009D4394 /* Volte-Medium.ttf in Resources */,
 				BEED9459247EB0F6009D4394 /* Roboto-Medium.ttf in Resources */,
 				BECF8F7F247EFF73000DB649 /* GoogleService-Info.plist in Resources */,
 				BE37E9E924816E1F004890F9 /* yellow.json in Resources */,
 				BEED9479247EB0F6009D4394 /* Roboto-Thin.ttf in Resources */,
+				BED8EA022484D38F00525825 /* safe.json in Resources */,
 				BE47BB622483F267004F1277 /* Onboarding.storyboard in Resources */,
 				BE37E9F12481854F004890F9 /* card2.json in Resources */,
 				BEED945D247EB0F6009D4394 /* SanFranciscoText-RegularItalic.otf in Resources */,
@@ -745,6 +760,7 @@
 				BE47BB522482C9C9004F1277 /* CardTableViewCell.swift in Sources */,
 				BE47BB5D2483A1C0004F1277 /* PinViewController.swift in Sources */,
 				BEED9429247EB0E0009D4394 /* LoginViewController.swift in Sources */,
+				BED8EA002484CD0D00525825 /* AddPinViewController.swift in Sources */,
 				BEED93BA247EB029009D4394 /* AppDelegate.swift in Sources */,
 				BE37E9FD24819CC9004890F9 /* TinyCreditCardView.swift in Sources */,
 				BE37E9E724814A2C004890F9 /* DashboardViewController.swift in Sources */,

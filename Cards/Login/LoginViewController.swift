@@ -45,12 +45,14 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                 let cred = FacebookAuthProvider.credential(withAccessToken: results?.token?.tokenString ?? "")
                 Auth.auth().signIn(with: cred) { (authResult, error) in
                     
-                    let vc = UIStoryboard.init(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
-                    let nav = UINavigationController.init(rootViewController: vc)
-                    nav.modalPresentationStyle = .fullScreen
-                    nav.navigationBar.isTranslucent = false
-                    nav.navigationBar.barTintColor = UIColor.init(hex: "131318")
-                    self.present( nav, animated: true, completion: nil)
+                    let vc = UIStoryboard.init(name: "AddPin", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController") as! AddPinViewController
+                    
+//                    let vc = UIStoryboard.init(name: "Dashboard", bundle: nil).instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+//                    let nav = UINavigationController.init(rootViewController: vc)
+//                    nav.modalPresentationStyle = .fullScreen
+//                    nav.navigationBar.isTranslucent = false
+//                    nav.navigationBar.barTintColor = UIColor.init(hex: "131318")
+                    self.present( vc, animated: true, completion: nil)
                     
                 }
             }

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Volte-Light.ttf">
+            <string>Volte-Light</string>
+        </array>
+        <array key="Volte-Regular.ttf">
+            <string>Volte-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add Pin View Controller-->
+        <scene sceneID="Ncz-gI-x2I">
+            <objects>
+                <viewController storyboardIdentifier="AddPinViewController" id="WFQ-TZ-pwM" customClass="AddPinViewController" customModule="Keeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FOQ-M7-DYL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yGC-fO-Pxb" customClass="KAPinField" customModule="KAPinField">
+                                <rect key="frame" x="40" y="409.5" width="334" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="pinField:" destination="xZg-Rj-fle" eventType="editingDidEnd" id="mrB-S7-jDV"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OC7-cO-SWs" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="107" y="84" width="200" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="bGB-Qw-PDb"/>
+                                    <constraint firstAttribute="width" constant="200" id="scD-fE-ghQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="safe"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secure your keeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efc-ft-Ofy">
+                                <rect key="frame" x="153.5" y="249" width="107" height="12"/>
+                                <fontDescription key="fontDescription" name="Volte-Light" family="Volte" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your New Pin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="620-yd-56m">
+                                <rect key="frame" x="145.5" y="283" width="123" height="14"/>
+                                <fontDescription key="fontDescription" name="Volte-Light" family="Volte" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d0-eb-Z6G">
+                                <rect key="frame" x="167" y="272.5" width="80" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="lqf-9Y-tdE"/>
+                                    <constraint firstAttribute="width" constant="80" id="t3F-FW-zF2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="14"/>
+                                <state key="normal" title="RESET">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.76078431369999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetAction:" destination="WFQ-TZ-pwM" eventType="touchUpInside" id="iXO-Jg-sCz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.074509803920000006" green="0.074509803920000006" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="OC7-cO-SWs" firstAttribute="centerX" secondItem="FOQ-M7-DYL" secondAttribute="centerX" id="0NT-u8-oYv"/>
+                            <constraint firstItem="620-yd-56m" firstAttribute="centerX" secondItem="Efc-ft-Ofy" secondAttribute="centerX" id="3tm-oI-cWv"/>
+                            <constraint firstItem="yGC-fO-Pxb" firstAttribute="centerY" secondItem="FOQ-M7-DYL" secondAttribute="centerY" constant="-30" id="655-YS-Pkk"/>
+                            <constraint firstItem="Efc-ft-Ofy" firstAttribute="centerX" secondItem="OC7-cO-SWs" secondAttribute="centerX" id="J4V-P4-6F5"/>
+                            <constraint firstItem="yGC-fO-Pxb" firstAttribute="leading" secondItem="5kJ-W2-WvV" secondAttribute="leading" constant="40" id="LwW-NR-Bjc"/>
+                            <constraint firstItem="OC7-cO-SWs" firstAttribute="top" secondItem="5kJ-W2-WvV" secondAttribute="top" constant="40" id="R8r-g0-IqC"/>
+                            <constraint firstItem="yGC-fO-Pxb" firstAttribute="centerX" secondItem="FOQ-M7-DYL" secondAttribute="centerX" id="TD3-xy-SjJ"/>
+                            <constraint firstItem="9d0-eb-Z6G" firstAttribute="centerX" secondItem="OC7-cO-SWs" secondAttribute="centerX" id="iWd-O3-0xJ"/>
+                            <constraint firstItem="5kJ-W2-WvV" firstAttribute="trailing" secondItem="yGC-fO-Pxb" secondAttribute="trailing" constant="40" id="l9e-2d-Ud9"/>
+                            <constraint firstItem="620-yd-56m" firstAttribute="top" secondItem="Efc-ft-Ofy" secondAttribute="bottom" constant="22" id="nPl-VM-nLg"/>
+                            <constraint firstItem="Efc-ft-Ofy" firstAttribute="top" secondItem="OC7-cO-SWs" secondAttribute="bottom" constant="15" id="tIW-8f-l99"/>
+                            <constraint firstItem="9d0-eb-Z6G" firstAttribute="centerY" secondItem="620-yd-56m" secondAttribute="centerY" id="vl9-EH-1pL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5kJ-W2-WvV"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="OC7-cO-SWs" id="BHa-Nk-rwJ"/>
+                        <outlet property="pinDescLabel" destination="620-yd-56m" id="byK-so-QX9"/>
+                        <outlet property="pinField" destination="yGC-fO-Pxb" id="P8V-49-8bJ"/>
+                        <outlet property="resetBtn" destination="9d0-eb-Z6G" id="O66-Ga-Iuw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqb-J2-yhJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="xZg-Rj-fle" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="47"/>
+        </scene>
+    </scenes>
+</document>
