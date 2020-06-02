@@ -24,7 +24,7 @@ target 'Cards' do
   pod 'SwiftyOnboard'
   pod 'CryptoSwift'
   pod 'NVActivityIndicatorView'
-  
+  pod 'GoogleSignIn'
   pod 'XLActionController'
   pod 'XLActionController/Twitter'
   

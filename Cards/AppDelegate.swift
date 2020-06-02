@@ -19,6 +19,7 @@ import FBSDKCoreKit
 import Firebase
 import FirebaseDatabase
 import SwiftyRSA
+import GoogleSignIn
 
 var ref: DatabaseReference!
 let ad = UIApplication.shared.delegate as! AppDelegate
@@ -40,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         FirebaseApp.configure()
+        
+        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+        
         ref = Database.database().reference()
         
         
@@ -76,9 +80,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
             sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
             annotation: options[UIApplication.OpenURLOptionsKey.annotation]
         )
-        
+        return GIDSignIn.sharedInstance().handle(url)
     }
     
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
     
     
     // MARK: UISceneSession Lifecycle

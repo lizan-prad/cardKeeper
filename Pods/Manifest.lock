@@ -1,4 +1,9 @@
 PODS:
+  - AppAuth (1.3.1):
+    - AppAuth/Core (= 1.3.1)
+    - AppAuth/ExternalUserAgent (= 1.3.1)
+  - AppAuth/Core (1.3.1)
+  - AppAuth/ExternalUserAgent (1.3.1)
   - CardIO (5.4.1)
   - CreditCardForm (0.1.8)
   - CryptoSwift (1.3.0)
@@ -76,6 +81,10 @@ PODS:
   - GoogleDataTransportCCTSupport (1.4.0):
     - GoogleDataTransport (~> 4.0)
     - nanopb (~> 0.3.901)
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleUtilities/AppDelegateSwizzler (6.5.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -94,7 +103,14 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.5.1):
     - GoogleUtilities/Logger
+  - GTMAppAuth (1.0.0):
+    - AppAuth/Core (~> 1.0)
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.4.0):
+    - GTMSessionFetcher/Full (= 1.4.0)
   - GTMSessionFetcher/Core (1.4.0)
+  - GTMSessionFetcher/Full (1.4.0):
+    - GTMSessionFetcher/Core (= 1.4.0)
   - KAPinField (5.0.1)
   - leveldb-library (1.22)
   - lottie-ios (3.1.6)
@@ -128,6 +144,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Database
+  - GoogleSignIn
   - KAPinField
   - lottie-ios
   - NVActivityIndicatorView
@@ -141,6 +158,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AppAuth
     - CardIO
     - CreditCardForm
     - CryptoSwift
@@ -159,7 +177,9 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
+    - GoogleSignIn
     - GoogleUtilities
+    - GTMAppAuth
     - GTMSessionFetcher
     - KAPinField
     - leveldb-library
@@ -175,6 +195,7 @@ SPEC REPOS:
     - XLActionController
 
 SPEC CHECKSUMS:
+  AppAuth: 8803ba1aec6d00d9afd30093f82e600307eaa6ea
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   CreditCardForm: 7e67bc394545eda9e502652af0858552b4931728
   CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
@@ -193,7 +214,9 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: d0560d915abf15e692e8538ba1d58442217b6aff
   GoogleDataTransport: 47fe3b8e1673e5187dfd615656a3c5034f150d69
   GoogleDataTransportCCTSupport: 36f69887fd212db6d7ef4dd45ba44523717a434e
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
+  GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   KAPinField: 24d85205115c1bb6aef8ff809944f41ac8c2785f
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
@@ -208,6 +231,6 @@ SPEC CHECKSUMS:
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
   XLActionController: f1f2226d2c6629db197d4a41f2da907085a4cb9d
 
-PODFILE CHECKSUM: 1823640d4d9d3a92e526e6ba84816043b8b7b5c6
+PODFILE CHECKSUM: fcefbdaf332b65ab93672d904f3ef82522cf8ef1
 
 COCOAPODS: 1.8.4

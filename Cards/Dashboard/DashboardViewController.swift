@@ -157,4 +157,22 @@
         }
         return 220
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if (indexPath.row + 1) > (cards?.count ?? 0) {
+            return false
+        }
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let button1 = UITableViewRowAction(style: .default, title: "Delete") { action, indexPath in
+            let userID = Auth.auth().currentUser?.uid
+            ref.child("Users").child(userID!).child(self.cards?[indexPath.row].time ?? "").removeValue()
+        }
+        button1.backgroundColor = UIColor.init(hex: "E6C231")
+        
+        return [button1]
+    }
  }

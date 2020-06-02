@@ -36,9 +36,10 @@
 		BE47BB5F2483A7C0004F1277 /* lock.json in Resources */ = {isa = PBXBuildFile; fileRef = BE47BB5E2483A7C0004F1277 /* lock.json */; };
 		BE47BB622483F267004F1277 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE47BB612483F267004F1277 /* Onboarding.storyboard */; };
 		BE47BB642483F274004F1277 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47BB632483F274004F1277 /* OnboardingViewController.swift */; };
+		BE6FC4A324869D6A006F58CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FC4A224869D6A006F58CE /* GoogleService-Info.plist */; };
+		BE6FC4A52486B50D006F58CE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FC4A42486B50D006F58CE /* RegistrationViewController.swift */; };
 		BEB8112F248404FB00F3C952 /* secure.json in Resources */ = {isa = PBXBuildFile; fileRef = BEB8112E248404FB00F3C952 /* secure.json */; };
 		BECF8F7B247EB381000DB649 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF8F7A247EB381000DB649 /* ColorExtension.swift */; };
-		BECF8F7F247EFF73000DB649 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BECF8F7E247EFF73000DB649 /* GoogleService-Info.plist */; };
 		BED8E9FE2484CCF000525825 /* AddPin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED8E9FD2484CCF000525825 /* AddPin.storyboard */; };
 		BED8EA002484CD0D00525825 /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8E9FF2484CD0D00525825 /* AddPinViewController.swift */; };
 		BED8EA022484D38F00525825 /* safe.json in Resources */ = {isa = PBXBuildFile; fileRef = BED8EA012484D38F00525825 /* safe.json */; };
@@ -147,9 +148,10 @@
 		BE47BB5E2483A7C0004F1277 /* lock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lock.json; sourceTree = "<group>"; };
 		BE47BB612483F267004F1277 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		BE47BB632483F274004F1277 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		BE6FC4A224869D6A006F58CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE6FC4A42486B50D006F58CE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		BEB8112E248404FB00F3C952 /* secure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secure.json; sourceTree = "<group>"; };
 		BECF8F7A247EB381000DB649 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		BECF8F7E247EFF73000DB649 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BED8E9FD2484CCF000525825 /* AddPin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPin.storyboard; sourceTree = "<group>"; };
 		BED8E9FF2484CD0D00525825 /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
 		BED8EA012484D38F00525825 /* safe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = safe.json; sourceTree = "<group>"; };
@@ -370,7 +372,7 @@
 				BEED9425247EB0E0009D4394 /* Login */,
 				BEED93C2247EB02B009D4394 /* Assets.xcassets */,
 				BEED93C4247EB02B009D4394 /* LaunchScreen.storyboard */,
-				BECF8F7E247EFF73000DB649 /* GoogleService-Info.plist */,
+				BE6FC4A224869D6A006F58CE /* GoogleService-Info.plist */,
 				BEED93C7247EB02B009D4394 /* Info.plist */,
 			);
 			path = Cards;
@@ -399,6 +401,7 @@
 			children = (
 				BEED9426247EB0E0009D4394 /* Login.storyboard */,
 				BEED9427247EB0E0009D4394 /* LoginViewController.swift */,
+				BE6FC4A42486B50D006F58CE /* RegistrationViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				BEED93B3247EB029009D4394 /* Frameworks */,
 				BEED93B4247EB029009D4394 /* Resources */,
 				8CAE9438F423D59B29403559 /* [CP] Embed Pods Frameworks */,
+				41D255EAE7C574EDB4323757 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -520,6 +524,7 @@
 				BEED93D4247EB02C009D4394 /* Frameworks */,
 				BEED93D5247EB02C009D4394 /* Resources */,
 				343D58C21833275EDBA355E7 /* [CP] Embed Pods Frameworks */,
+				D1470F6E4A5543861A69E1A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -624,6 +629,7 @@
 				BE47BB5624839977004F1277 /* ViewCard.storyboard in Resources */,
 				BEED93C3247EB02B009D4394 /* Assets.xcassets in Resources */,
 				BEED9428247EB0E0009D4394 /* Login.storyboard in Resources */,
+				BE6FC4A324869D6A006F58CE /* GoogleService-Info.plist in Resources */,
 				BEED9472247EB0F6009D4394 /* Roboto-LightItalic.ttf in Resources */,
 				BE47BB5B2483A1B7004F1277 /* PinView.storyboard in Resources */,
 				BEED9473247EB0F6009D4394 /* Volte-SemiBoldItalic.ttf in Resources */,
@@ -633,7 +639,6 @@
 				BE37E9ED24817010004890F9 /* line.json in Resources */,
 				BEED9461247EB0F6009D4394 /* Volte-Medium.ttf in Resources */,
 				BEED9459247EB0F6009D4394 /* Roboto-Medium.ttf in Resources */,
-				BECF8F7F247EFF73000DB649 /* GoogleService-Info.plist in Resources */,
 				BE37E9E924816E1F004890F9 /* yellow.json in Resources */,
 				BEED9479247EB0F6009D4394 /* Roboto-Thin.ttf in Resources */,
 				BED8EA022484D38F00525825 /* safe.json in Resources */,
@@ -675,6 +680,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cards-CardsUITests/Pods-Cards-CardsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41D255EAE7C574EDB4323757 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cards/Pods-Cards-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cards/Pods-Cards-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cards/Pods-Cards-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		44FD416E4DC3B4717E2F4CE4 /* [CP] Check Pods Manifest.lock */ = {
@@ -738,6 +760,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D1470F6E4A5543861A69E1A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cards-CardsUITests/Pods-Cards-CardsUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cards-CardsUITests/Pods-Cards-CardsUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cards-CardsUITests/Pods-Cards-CardsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F307D85A9D17314623A21896 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -779,6 +818,7 @@
 				BE47BB642483F274004F1277 /* OnboardingViewController.swift in Sources */,
 				BE37E9FE24819CC9004890F9 /* TinyCreditCardBackView.swift in Sources */,
 				BE47BB542482CFD5004F1277 /* AddCardCell.swift in Sources */,
+				BE6FC4A52486B50D006F58CE /* RegistrationViewController.swift in Sources */,
 				BEED93BC247EB029009D4394 /* SceneDelegate.swift in Sources */,
 				BECF8F7B247EB381000DB649 /* ColorExtension.swift in Sources */,
 				BE37E9F6248185AD004890F9 /* NewCardViewController.swift in Sources */,
@@ -956,7 +996,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qs.cards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.li.keeper;
 				PRODUCT_NAME = Keeper;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -975,7 +1015,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qs.cards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.li.keeper;
 				PRODUCT_NAME = Keeper;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

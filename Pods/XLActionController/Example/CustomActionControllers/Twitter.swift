@@ -111,7 +111,7 @@ open class TwitterActionController: ActionController<TwitterCell, ActionData, Tw
         let height = contentHeight + TwitterActionController.bottomPadding + safeAreaInsets.bottom
         let hideBottomSpaceView = UIView(frame: CGRect.init(x: 0, y: 0, width: width, height: height))
         hideBottomSpaceView.autoresizingMask = [.flexibleWidth, .flexibleBottomMargin]
-        hideBottomSpaceView.backgroundColor = .white
+        hideBottomSpaceView.backgroundColor = UIColor.init(red: 19/255, green: 19/255, blue: 24/255, alpha: 1)
         return hideBottomSpaceView
     }()
 

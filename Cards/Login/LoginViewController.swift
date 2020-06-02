@@ -12,9 +12,22 @@ import FBSDKCoreKit
 import Firebase
 import FirebaseAuth
 import NVActivityIndicatorView
+import GoogleSignIn
 
+class LoginViewController: UIViewController, LoginButtonDelegate, GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+          // ...
+          return
+        }
 
-class LoginViewController: UIViewController, LoginButtonDelegate {
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                          accessToken: authentication.accessToken)
+        self.signInWithCred(cred: credential)
+    }
+    
     
     
 
@@ -29,12 +42,22 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         loginBtn.rounded()
         registerBtn.layer.borderColor = UIColor.init(hex: "E6C231", alpha: 1).cgColor
         registerBtn.layer.borderWidth = 2
-
+        GIDSignIn.sharedInstance()?.delegate = self
         
     }
     
+    @IBAction func googleSignIn(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     @IBAction func loginAction(_ sender: Any) {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+        vc.type = "L"
+        vc.didSuceed = {
+            self.checlPin()
+        }
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func loginFb(_ sender: Any) {
@@ -44,26 +67,45 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         manager.logIn(permissions: ["public_profile", "email"], from: self) { (results, error) in
             if results?.token != nil {
                 let cred = FacebookAuthProvider.credential(withAccessToken: results?.token?.tokenString ?? "")
-                self.startAnimating(type: .orbit)
-                Auth.auth().signIn(with: cred) { (authResult, error) in
-                    ref.child("Profile").child(Auth.auth().currentUser?.uid ?? "").observeSingleEvent(of: .value) { (snapshot) in
-                        self.stopAnimating()
-                        if (snapshot.value as? String) == nil {
-                            let vc = UIStoryboard.init(name: "AddPin", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController") as! AddPinViewController
-                            vc.didSuceed = { (p1,p2) in
-                                let utf8str = p1.data(using: .utf8)
-                                
-                                let base64Encoded = utf8str?.base64EncodedString()
-                                
-                                ref.child("Profile").child(Auth.auth().currentUser?.uid ?? "").setValue(self.encrypt(data: base64Encoded ?? "") ?? "")
-                                self.openDash()
-                            }
-                            self.present( vc, animated: true, completion: nil)
-                        } else {
-                            self.openDash()
-                        }
+                self.signInWithCred(cred: cred)
+            }
+        }
+    }
+    @IBAction func register(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+        vc.type = "R"
+        vc.didSuceed = {
+            self.checlPin()
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func signInWithCred(cred: AuthCredential) {
+        self.startAnimating(type: .orbit)
+        Auth.auth().signIn(with: cred) { (authResult, error) in
+            self.checlPin()
+        }
+    }
+    
+    func checlPin() {
+        ref.child("Profile").child(Auth.auth().currentUser?.uid ?? "").observeSingleEvent(of: .value) { (snapshot) in
+            self.stopAnimating()
+            if (snapshot.value as? String) == nil {
+                let vc = UIStoryboard.init(name: "AddPin", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController") as! AddPinViewController
+                vc.didSuceed = { (p1,p2) in
+                    let utf8str = p1.data(using: .utf8)
+                    
+                    let base64Encoded = utf8str?.base64EncodedString()
+                    let encrypt = self.encrypt(data: base64Encoded ?? "") ?? ""
+                    ref.child("Profile").child(Auth.auth().currentUser?.uid ?? "").setValue(encrypt)
+                    Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (_) in
+                        self.openDash()
                     }
+                    
                 }
+                self.present( vc, animated: true, completion: nil)
+            } else {
+                self.openDash()
             }
         }
     }

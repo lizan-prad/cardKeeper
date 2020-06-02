@@ -21,6 +21,7 @@ class OnboardingViewController: UIViewController {
         onboarding.addSubview(swiftyOnboard)
         swiftyOnboard.dataSource = self
         swiftyOnboard.delegate = self
+        swiftyOnboard.shouldSwipe = false
         swiftyOnboard.fadePages = true
         swiftyOnboard.style = .dark
         self.navigationController?.setNavigationBarHidden(true, animated: false)

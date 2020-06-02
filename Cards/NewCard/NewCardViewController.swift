@@ -30,11 +30,12 @@ class NewCardViewController: UIViewController, CardInfoDelegate {
       
     }
     func didReceiveCardInfo(number: String, expiryDate: String, scv: String, cardType: String, name: String, skin: String) {
-        let data = ["CardNo": number, "expData": expiryDate, "CSC": scv, "cardType": cardType, "Name": name, "skin": skin]
+        let time = "\(Date().timeIntervalSince1970)".replacingOccurrences(of: ".", with: "")
+        let data = ["CardNo": number, "expData": expiryDate, "CSC": scv, "cardType": cardType, "Name": name, "skin": skin, "time": time]
         do {
             let headerJWTData: Data = try JSONSerialization.data(withJSONObject:data,options: JSONSerialization.WritingOptions.prettyPrinted)
             let headerJWTBase64 = headerJWTData.base64EncodedString()
-            ref.child("Users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["\(Date().timeIntervalSince1970)".replacingOccurrences(of: ".", with: "") : encrypt(data: headerJWTBase64) ?? ""])
+            ref.child("Users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues([ time : encrypt(data: headerJWTBase64) ?? ""])
             self.dismiss(animated: true, completion: nil)
         } catch {
             print("could not make data")
@@ -82,7 +83,8 @@ extension UIViewController {
     
     func encrypt(data: String) -> String? {
         do {
-            let aes = try AES(key: Auth.auth().currentUser?.uid.to16Bit() ?? "", iv: Auth.auth().currentUser?.displayName?.replacingOccurrences(of: " ", with: "").to16Bit() ?? "") // aes128
+            let displayName = Auth.auth().currentUser?.displayName ?? "Keeper UserData"
+            let aes = try AES(key: Auth.auth().currentUser?.uid.to16Bit() ?? "", iv: displayName.replacingOccurrences(of: " ", with: "").to16Bit() ?? "") // aes128
             let ciphertext = try aes.encrypt(Array(data.utf8))
             return ciphertext.toHexString()
         } catch {
@@ -110,7 +112,8 @@ extension UIViewController {
     
     func decrypt(base64: String) -> String? {
         do {
-            let aes = try AES(key: Auth.auth().currentUser?.uid.to16Bit() ?? "", iv: Auth.auth().currentUser?.displayName?.replacingOccurrences(of: " ", with: "").to16Bit() ?? "") // aes128
+            let displayName = Auth.auth().currentUser?.displayName ?? "Keeper UserData"
+            let aes = try AES(key: Auth.auth().currentUser?.uid.to16Bit() ?? "", iv: displayName.replacingOccurrences(of: " ", with: "").to16Bit() ?? "") // aes128
             let ciphertext = try aes.decrypt(base64.hexaBytes)
             let data = Data.init(hex: ciphertext.toHexString())
             let str = String.init(data: data, encoding: .utf8)

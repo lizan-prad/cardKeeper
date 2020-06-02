@@ -17,12 +17,14 @@ class CardModel: Mappable {
     var cvc: String?
     var cardType: String?
     var skin: String?
+    var time: String?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
+        time <- map["time"]
         number <- map["CardNo"]
         expiry <- map["expData"]
         name <- map["Name"]

@@ -71,7 +71,7 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.isUserInteractionEnabled = true
-        scrollView.isScrollEnabled = true
+        scrollView.isScrollEnabled = false
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         return scrollView
     }()
@@ -82,7 +82,7 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
     fileprivate var pages = [SwiftyOnboardPage]()
     
     open var style: SwiftyOnboardStyle = .dark
-    open var shouldSwipe: Bool = true
+    open var shouldSwipe: Bool = false
     open var fadePages: Bool = true
     
     open var tapContinue: (() -> ())?
