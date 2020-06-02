@@ -36,8 +36,8 @@
 		BE47BB5F2483A7C0004F1277 /* lock.json in Resources */ = {isa = PBXBuildFile; fileRef = BE47BB5E2483A7C0004F1277 /* lock.json */; };
 		BE47BB622483F267004F1277 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE47BB612483F267004F1277 /* Onboarding.storyboard */; };
 		BE47BB642483F274004F1277 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47BB632483F274004F1277 /* OnboardingViewController.swift */; };
-		BE6FC4A324869D6A006F58CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FC4A224869D6A006F58CE /* GoogleService-Info.plist */; };
 		BE6FC4A52486B50D006F58CE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6FC4A42486B50D006F58CE /* RegistrationViewController.swift */; };
+		BE6FC4A72486C836006F58CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FC4A62486C836006F58CE /* GoogleService-Info.plist */; };
 		BEB8112F248404FB00F3C952 /* secure.json in Resources */ = {isa = PBXBuildFile; fileRef = BEB8112E248404FB00F3C952 /* secure.json */; };
 		BECF8F7B247EB381000DB649 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF8F7A247EB381000DB649 /* ColorExtension.swift */; };
 		BED8E9FE2484CCF000525825 /* AddPin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED8E9FD2484CCF000525825 /* AddPin.storyboard */; };
@@ -148,8 +148,8 @@
 		BE47BB5E2483A7C0004F1277 /* lock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lock.json; sourceTree = "<group>"; };
 		BE47BB612483F267004F1277 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		BE47BB632483F274004F1277 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		BE6FC4A224869D6A006F58CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE6FC4A42486B50D006F58CE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BE6FC4A62486C836006F58CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEB8112E248404FB00F3C952 /* secure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secure.json; sourceTree = "<group>"; };
 		BECF8F7A247EB381000DB649 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		BED8E9FD2484CCF000525825 /* AddPin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPin.storyboard; sourceTree = "<group>"; };
@@ -371,8 +371,8 @@
 				BEED942A247EB0EA009D4394 /* gif */,
 				BEED9425247EB0E0009D4394 /* Login */,
 				BEED93C2247EB02B009D4394 /* Assets.xcassets */,
+				BE6FC4A62486C836006F58CE /* GoogleService-Info.plist */,
 				BEED93C4247EB02B009D4394 /* LaunchScreen.storyboard */,
-				BE6FC4A224869D6A006F58CE /* GoogleService-Info.plist */,
 				BEED93C7247EB02B009D4394 /* Info.plist */,
 			);
 			path = Cards;
@@ -599,6 +599,7 @@
 				BEED945B247EB0F6009D4394 /* Roboto-Light.ttf in Resources */,
 				BEED947A247EB0F6009D4394 /* Roboto-Black.ttf in Resources */,
 				BEED946D247EB0F6009D4394 /* SanFranciscoText-MediumItalic.otf in Resources */,
+				BE6FC4A72486C836006F58CE /* GoogleService-Info.plist in Resources */,
 				BEED9430247EB0EA009D4394 /* MajesticPiercingBasilisk-max-1mb.gif in Resources */,
 				BEED9462247EB0F6009D4394 /* Roboto-Regular.ttf in Resources */,
 				BE19412824857D2600B2B6AA /* cut-card.json in Resources */,
@@ -629,7 +630,6 @@
 				BE47BB5624839977004F1277 /* ViewCard.storyboard in Resources */,
 				BEED93C3247EB02B009D4394 /* Assets.xcassets in Resources */,
 				BEED9428247EB0E0009D4394 /* Login.storyboard in Resources */,
-				BE6FC4A324869D6A006F58CE /* GoogleService-Info.plist in Resources */,
 				BEED9472247EB0F6009D4394 /* Roboto-LightItalic.ttf in Resources */,
 				BE47BB5B2483A1B7004F1277 /* PinView.storyboard in Resources */,
 				BEED9473247EB0F6009D4394 /* Volte-SemiBoldItalic.ttf in Resources */,

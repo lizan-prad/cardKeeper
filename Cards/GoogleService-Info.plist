@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>524034434450-1c419ca69fmf5hqtmgo31rknf9gmargr.apps.googleusercontent.com</string>
+	<string>524034434450-4mutus2enrgggdfap0vc5oje1u26mnr6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.524034434450-1c419ca69fmf5hqtmgo31rknf9gmargr</string>
+	<string>com.googleusercontent.apps.524034434450-4mutus2enrgggdfap0vc5oje1u26mnr6</string>
 	<key>API_KEY</key>
 	<string>AIzaSyD_K6Ul7s6zREdLr2ITigqD1Djq25h84TE</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.li.keeper</string>
+	<string>com.lee.keeper</string>
 	<key>PROJECT_ID</key>
 	<string>cards-41259</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:524034434450:ios:c073410de87812c44bcd4b</string>
+	<string>1:524034434450:ios:84718e35c9bea7ab4bcd4b</string>
 	<key>DATABASE_URL</key>
 	<string>https://cards-41259.firebaseio.com</string>
 </dict>
